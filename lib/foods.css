@@ -3,16 +3,8 @@
 }
 
 .food-delete button {
-  width:1em;
-  height:1em;
-  padding:0;
-  line-height:7px;
-  border-radius:100%;
-  background-color:red;
-  color:white;
-  font-weight:bold;
-  font-size:20px;
-  border:none;
+  content: '<span>&#10005;</span>';
+  color:#DB4545;
 }
 
 td.food-delete {
@@ -33,13 +25,12 @@ td.food-delete {
   text-align:right;
 }
 
-
 .main-diary {
   width: 100%;
 }
 
 .current-date {
-  background-color: #56CCF2;
+  background-color: #3EAAAF;
   width: 30%;
   text-align: center;
   color: white;
