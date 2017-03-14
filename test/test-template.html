@@ -8,7 +8,8 @@
     window.assert = chai.assert;
     window.onload = function() { mocha.run(); };
   </script>
-  <script src="foods-test.js"></script>
+  <!-- Link to your mocha code like this: -->
+  <!-- <script src="foods-test.js"></script> -->
   <style>
     iframe {
       height:1px;
@@ -19,5 +20,6 @@
 </head>
 <body>
   <div id="mocha"></div>
-  <iframe id="foods-frame" src="../foods.html" sandbox="allow-same-origin"></iframe>
+  <!-- If you're running integration tests, add the page you're testing as an iframe: -->
+  <!-- <iframe id="foods-frame" src="../foods.html"></iframe> -->
 </body>
