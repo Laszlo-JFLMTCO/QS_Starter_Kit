@@ -32,3 +32,20 @@ td.food-delete {
 #create-form {
   text-align:right;
 }
+
+
+.main-diary {
+  width: 100%;
+}
+
+.current-date {
+  background-color: #56CCF2;
+  width: 30%;
+  text-align: center;
+  color: white;
+}
+
+.meal-breakfast {
+  width: 50%;
+}
+
