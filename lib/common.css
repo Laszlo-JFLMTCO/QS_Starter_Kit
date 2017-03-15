@@ -89,3 +89,7 @@ input {
   font-weight:normal;
   margin-top:6px;
 }
+
+.hidden {
+  display: none;
+}
