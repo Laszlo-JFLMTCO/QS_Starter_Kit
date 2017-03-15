@@ -60,12 +60,46 @@ describe('#food-list', function() {
       var secondTableRow = $('#food-list .food-row:nth-of-type(2)');
       var secondTableRowName = secondTableRow.children('.food-name').text();
       var secondTableRowCalories = secondTableRow.children('.food-calories').text();
-      console.log(localStorage);
 
       assert.equal(firstTableRowName, expectedFirstFoodName);
       assert.equal(firstTableRowCalories, expectedFirstFoodCalories);
       assert.equal(secondTableRowName, expectedSecondFoodName);
       assert.equal(secondTableRowCalories, expectedSecondFoodCalories);
     });
+
   });
+
+  context('removing food from table', function(){
+    it('will delete food when clicked on - button', function() {
+      var expectedFirstFoodName = 'Avocado';
+      var expectedFirstFoodCalories = 200;
+      var expectedSecondFoodName = 'Banana';
+      var expectedSecondFoodCalories = 100;
+      $('#name-field input').val(expectedSecondFoodName);
+      $('#calories-field input').val(expectedSecondFoodCalories);
+      $('#add-food').click();
+      $('#name-field input').val(expectedFirstFoodName);
+      $('#calories-field input').val(expectedFirstFoodCalories);
+      $('#add-food').click();
+
+      $('#food-list .food-row:nth-of-type(1) .food-delete button').click();
+      console.log($('#food-list .food-row:nth-of-type(1) .food-delete button'));
+
+      var firstTableRow = $('#food-list .food-row:nth-of-type(1)');
+      console.log(firstTableRow);
+      var firstTableRowName = firstTableRow.children('.food-name').text();
+      var firstTableRowCalories = firstTableRow.children('.food-calories').text();
+      var secondTableRow = $('#food-list .food-row:nth-of-type(2)');
+      console.log(secondTableRow);
+      var secondTableRowName = secondTableRow.children('.food-name').text();
+      var secondTableRowCalories = secondTableRow.children('.food-calories').text();
+
+      assert.equal(firstTableRowName, expectedFirstFoodName);
+      assert.equal(firstTableRowCalories, expectedFirstFoodCalories);
+      assert.equal(secondTableRowName, "");
+      assert.equal(secondTableRowCalories, "");
+    });
+
+  });
+
 });
