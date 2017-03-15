@@ -42,9 +42,30 @@ describe('#food-list', function() {
       assert.equal(firstTableRowCalories, expectedFoodCalories);
     });
 
-    it('will add food to a non-empty table', function() {
-console.log(localStorage);
-    });
+    it('will add food to TOP of a non-empty table', function() {
+      var expectedFirstFoodName = 'Avocado';
+      var expectedFirstFoodCalories = 200;
+      var expectedSecondFoodName = 'Banana';
+      var expectedSecondFoodCalories = 100;
+      $('#name-field input').val(expectedSecondFoodName);
+      $('#calories-field input').val(expectedSecondFoodCalories);
+      $('#add-food').click();
+      $('#name-field input').val(expectedFirstFoodName);
+      $('#calories-field input').val(expectedFirstFoodCalories);
+      $('#add-food').click();
 
-  })
+      var firstTableRow = $('#food-list .food-row:nth-of-type(1)');
+      var firstTableRowName = firstTableRow.children('.food-name').text();
+      var firstTableRowCalories = firstTableRow.children('.food-calories').text();
+      var secondTableRow = $('#food-list .food-row:nth-of-type(2)');
+      var secondTableRowName = secondTableRow.children('.food-name').text();
+      var secondTableRowCalories = secondTableRow.children('.food-calories').text();
+      console.log(localStorage);
+
+      assert.equal(firstTableRowName, expectedFirstFoodName);
+      assert.equal(firstTableRowCalories, expectedFirstFoodCalories);
+      assert.equal(secondTableRowName, expectedSecondFoodName);
+      assert.equal(secondTableRowCalories, expectedSecondFoodCalories);
+    });
+  });
 });
