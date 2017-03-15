@@ -39,7 +39,12 @@ button {
   color:#666666;
 }
 
-#add-food {
+#add-food,
+#create-new,
+#add-to-breakfast,
+#add-to-lunch,
+#add-to-snack,
+#add-to-dinner {
   border: 1px solid #B5B5B5;
   border-radius: 14px;
   padding: 0 8px;
@@ -51,7 +56,12 @@ button {
   font-size: 16px;
 }
 
-#add-food:hover {
+#add-food:hover,
+#create-new:hover,
+#add-to-breakfast:hover,
+#add-to-lunch:hover,
+#add-to-snack:hover,
+#add-to-dinner:hover {
   border-color: #3EAAAF;
   color: #3EAAAF;
 }
