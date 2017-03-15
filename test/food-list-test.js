@@ -17,10 +17,12 @@ describe('#food-list', function() {
     //     get: function () { return Object.keys(this).length - 2; }
     //   });
     // });
+    $('#food-list tbody').html('');
+    $('#create-form input').val('');
+    $('.validation-error').html('');
   });
 
   beforeEach(function() {
-    $('#food-list tbody').html('');
     $('#create-form input').val('');
     $('.validation-error').html('');
   });
@@ -43,13 +45,9 @@ describe('#food-list', function() {
     });
 
     it('will add food to TOP of a non-empty table', function() {
+      
       var expectedFirstFoodName = 'Avocado';
       var expectedFirstFoodCalories = 200;
-      var expectedSecondFoodName = 'Banana';
-      var expectedSecondFoodCalories = 100;
-      $('#name-field input').val(expectedSecondFoodName);
-      $('#calories-field input').val(expectedSecondFoodCalories);
-      $('#add-food').click();
       $('#name-field input').val(expectedFirstFoodName);
       $('#calories-field input').val(expectedFirstFoodCalories);
       $('#add-food').click();
@@ -57,47 +55,28 @@ describe('#food-list', function() {
       var firstTableRow = $('#food-list .food-row:nth-of-type(1)');
       var firstTableRowName = firstTableRow.children('.food-name').text();
       var firstTableRowCalories = firstTableRow.children('.food-calories').text();
-      var secondTableRow = $('#food-list .food-row:nth-of-type(2)');
-      var secondTableRowName = secondTableRow.children('.food-name').text();
-      var secondTableRowCalories = secondTableRow.children('.food-calories').text();
 
       assert.equal(firstTableRowName, expectedFirstFoodName);
       assert.equal(firstTableRowCalories, expectedFirstFoodCalories);
-      assert.equal(secondTableRowName, expectedSecondFoodName);
-      assert.equal(secondTableRowCalories, expectedSecondFoodCalories);
     });
 
   });
 
   context('removing food from table', function(){
     it('will delete food when clicked on - button', function() {
-      var expectedFirstFoodName = 'Avocado';
-      var expectedFirstFoodCalories = 200;
-      var expectedSecondFoodName = 'Banana';
-      var expectedSecondFoodCalories = 100;
-      $('#name-field input').val(expectedSecondFoodName);
-      $('#calories-field input').val(expectedSecondFoodCalories);
-      $('#add-food').click();
-      $('#name-field input').val(expectedFirstFoodName);
-      $('#calories-field input').val(expectedFirstFoodCalories);
-      $('#add-food').click();
+      var expectedFoodName = 'Banana';
+      var expectedFoodCalories = 100;
 
       $('#food-list .food-row:nth-of-type(1) .food-delete button').click();
-      console.log($('#food-list .food-row:nth-of-type(1) .food-delete button'));
 
       var firstTableRow = $('#food-list .food-row:nth-of-type(1)');
-      console.log(firstTableRow);
       var firstTableRowName = firstTableRow.children('.food-name').text();
       var firstTableRowCalories = firstTableRow.children('.food-calories').text();
       var secondTableRow = $('#food-list .food-row:nth-of-type(2)');
-      console.log(secondTableRow);
-      var secondTableRowName = secondTableRow.children('.food-name').text();
-      var secondTableRowCalories = secondTableRow.children('.food-calories').text();
 
-      assert.equal(firstTableRowName, expectedFirstFoodName);
-      assert.equal(firstTableRowCalories, expectedFirstFoodCalories);
-      assert.equal(secondTableRowName, "");
-      assert.equal(secondTableRowCalories, "");
+      assert.equal(firstTableRowName, expectedFoodName);
+      assert.equal(firstTableRowCalories, expectedFoodCalories);
+      assert.equal(secondTableRow.length, 0);
     });
 
   });

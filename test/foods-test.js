@@ -10,7 +10,14 @@ describe('#create-form', function() {
     $('#food-list tbody').html('');
     $('#create-form input').val('');
     $('.validation-error').html('');
+  });
 
+  afterEach(function() {
+    localStorage.clear();
+  });
+
+  after(function(){
+    
   });
 
   context('validations', function() {
@@ -39,6 +46,7 @@ describe('#create-form', function() {
 
       var caloriesValidationContent = $("#calories-field .validation-error").text();
       assert.equal(caloriesValidationContent, "");
+      localStorage.clear();
     });
 
   });
