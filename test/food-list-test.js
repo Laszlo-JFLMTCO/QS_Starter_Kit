@@ -85,23 +85,28 @@ describe('#food-list', function() {
 
     it('can update food name', function(){
       var newFoodName = 'NewFoodName';
-      var newFoodCalories = 999;
 
       $('#food-list .food-row:nth-of-type(1) .food-name').click();
+      console.log($('#food-list .food-row:nth-of-type(1) .food-name input'));
       $('#food-list .food-row:nth-of-type(1) .food-name input').val(newFoodName);
-      debugger;
       $('body').click();
       
       var tableRowName = $('#food-list .food-row:nth-of-type(1) .food-name').text();
-      var firstTableRowCalories = $('#food-list .food-row:nth-of-type(1) .food-calories').text();
 
       assert.equal(tableRowName, newFoodName);
-
     });
-    xit('can update food calories', function(){
+    it('can update food calories', function(){
+      var newFoodCalories = 999;
 
+      $('#food-list .food-row:nth-of-type(1) .food-calories').click();
+      console.log($('#food-list .food-row:nth-of-type(1) .food-calories input'));
+      $('#food-list .food-row:nth-of-type(1) .food-calories input').val(newFoodCalories);
+      $('body').click();
+      
+      var tableRowCalories = $('#food-list .food-row:nth-of-type(1) .food-calories').text();
+
+      assert.equal(tableRowCalories, newFoodCalories);
     });
   });
-
 
 });
