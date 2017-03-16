@@ -36,14 +36,10 @@ td.food-delete {
   color: white;
 }
 
-.meal-breakfast {
-  width: 50%;
-}
-
 tfoot {
+  background-color: #3EAAAF;
   color: black;
   font-weight: bold;
-  background-color: #EEEEEE;
 }
 
 .food-calories, .remaining-calories, .total-calories {
