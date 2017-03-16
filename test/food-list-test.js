@@ -83,20 +83,21 @@ describe('#food-list', function() {
 
   context('update food items', function(){
 
-    it('can update food name', function(){
+    it('can update food name', function(done){
       var newFoodName = 'NewFoodName';
 
-      $('#food-list .food-row:nth-of-type(1) .food-name').click();
-      console.log($('#food-list .food-row:nth-of-type(1) .food-name input'));
+      $('#food-list .food-name').click();
       $('#food-list .food-row:nth-of-type(1) .food-name input').val(newFoodName);
-      console.log($('#food-list .food-row:nth-of-type(1) .food-name input').val());
-      $('#food-list .food-row:nth-of-type(1) .food-name input').blur();
-
-      var tableRowName = $('#food-list .food-row:nth-of-type(1) .food-name').text();
-
-      assert.equal(tableRowName, newFoodName);
+      
+      setTimeout(function(){
+        $('#food-list .food-row:nth-of-type(1) .food-name input').blur();  
+        var tableRowName = $('#food-list .food-row:nth-of-type(1) .food-name').text();
+        assert.equal(tableRowName, newFoodName);
+        done();
+      }, 50)
     });
-    xit('can update food calories', function(){
+
+    it('can update food calories', function(done){
       var newFoodCalories = 999;
 
       $('#food-list .food-row:nth-of-type(1) .food-calories').click();
@@ -104,9 +105,12 @@ describe('#food-list', function() {
       $('#food-list .food-row:nth-of-type(1) .food-calories input').val(newFoodCalories);
       $('body').click();
       
-      var tableRowCalories = $('#food-list .food-row:nth-of-type(1) .food-calories').text();
-
-      assert.equal(tableRowCalories, newFoodCalories);
+      setTimeout(function(){
+        $('#food-list .food-row:nth-of-type(1) .food-calories input').blur();  
+        var tableRowCalories = $('#food-list .food-row:nth-of-type(1) .food-calories').text();
+        assert.equal(tableRowCalories, newFoodCalories);
+        done();
+      }, 50)
     });
   });
 
