@@ -3,20 +3,6 @@ describe('#food-list', function() {
 
   before(function() {
     $ = document.getElementById("foods-frame").contentWindow.$;
-    // Code reference: http://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests
-    // Checking through J-Console, seeing zero difference!!!
-    // (function () {
-    //   var localStorage = {};
-    //   localStorage.setItem = function (key, val) {
-    //     this[key] = val + '';
-    //   }
-    //   localStorage.getItem = function (key) {
-    //     return this[key];
-    //   }
-    //   Object.defineProperty(localStorage, 'length', {
-    //     get: function () { return Object.keys(this).length - 2; }
-    //   });
-    // });
     $('#food-list tbody').html('');
     $('#create-form input').val('');
     $('.validation-error').html('');
