@@ -42,6 +42,6 @@ tfoot {
   font-weight: bold;
 }
 
-.food-calories, .remaining-calories, .total-calories {
+.food-calories, .remaining-calories, .total-calories, .total-goal-calories {
   text-align: right;
 }
