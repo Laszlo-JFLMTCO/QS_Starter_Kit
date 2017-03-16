@@ -38,4 +38,10 @@ td.food-delete {
 
 tfoot {
   background-color: #3EAAAF;
+  color: black;
+  font-weight: bold;
+}
+
+.food-calories, .remaining-calories, .total-calories {
+  text-align: right;
 }
