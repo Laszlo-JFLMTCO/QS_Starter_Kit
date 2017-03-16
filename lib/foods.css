@@ -39,3 +39,7 @@ td.food-delete {
 .meal-breakfast {
   width: 50%;
 }
+
+tfoot {
+  background-color: #3EAAAF;
+}
