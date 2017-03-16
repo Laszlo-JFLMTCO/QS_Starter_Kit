@@ -12,10 +12,6 @@ td.food-delete {
   width:21px;
 }
 
-#food-list {
-  width: 328px;
-}
-
 #create-form, #food-filter {
   width: 300px;
   position:relative;
@@ -31,9 +27,36 @@ td.food-delete {
 
 .current-date {
   background-color: #3EAAAF;
-  width: 30%;
+  width: 50%;
   text-align: center;
   color: white;
+}
+
+th {
+  font-weight: bold;
+}
+
+td, th {
+  border:solid lightgrey 1px;
+  margin:0;
+  padding:8px;
+}
+
+#food-list td,
+#meal-breakfast td,
+#meal-lunch td,
+#meal-snack td,
+#meal-dinner td {
+  width: 132px;
+}
+
+#foods-for-meals td {
+  width: 82px;
+}
+
+#foods-for-meals td input {
+  margin-right: 8px;
+  width: 40px;
 }
 
 tfoot {
