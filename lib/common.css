@@ -15,17 +15,6 @@ table {
   border-collapse: collapse;
 }
 
-th {
-  font-weight: bold;
-}
-
-td, th {
-  border:solid lightgrey 1px;
-  margin:0;
-  padding:4px;
-  min-width: 100px;
-}
-
 button {
   background: none;
   border: none;
