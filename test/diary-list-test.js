@@ -54,7 +54,6 @@ describe('diary test', function() {
       var checkbox = $('#foods-for-meals input').first();
       checkbox.click();
 
-      debugger;
       $('#add-to-breakfast').click();
 
       var mealTableRow = $('#meal-breakfast .food-row:nth-of-type(1)');
