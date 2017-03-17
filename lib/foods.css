@@ -1,3 +1,31 @@
+.chart {
+  margin-top: 25px;
+}
+
+.chart div {
+  font: 16px;
+  background-color: #C6EDEB;
+  text-align: right;
+  padding: 0;
+  margin: 1px;
+  color: white;
+  display: block;
+  height: 50px;
+}
+
+.chart div div {
+  background-color: #3EAAAF;
+}
+
+.chart div:hover {
+  background-color: #DB4545;
+}
+
+.chart p {
+  color: #555;
+  text-align: left;
+}
+
 #container{
   margin-left: 25px;
 }
@@ -60,7 +88,7 @@ td, th {
 }
 
 tfoot {
-  background-color: #3EAAAF;
+  background-color: #C6EDEB;
   color: black;
   font-weight: bold;
 }
