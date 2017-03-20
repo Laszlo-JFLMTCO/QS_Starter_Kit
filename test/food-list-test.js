@@ -3,14 +3,10 @@ describe('#food-list', function() {
 
   before(function() {
     $ = document.getElementById("foods-frame").contentWindow.$;
-    $('#food-list tbody').html('');
-    $('#create-form input').val('');
-    $('.validation-error').html('');
   });
 
   beforeEach(function() {
-    $('#create-form input').val('');
-    $('.validation-error').html('');
+
   });
 
   context('adding foods to table', function() {
