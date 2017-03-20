@@ -53,12 +53,14 @@ describe('diary test', function() {
 
       $('#add-to-breakfast').click();
 
-      var mealTableRow = $('#meal-breakfast .food-row:nth-of-type(1)');
-      var mealTableRowName = mealTableRow.children('.food-name').text();
-      var mealTableRowCalories = mealTableRow.children('.food-calories').text();
+      setTimeout(function(){
+        var mealTableRow = $('#meal-breakfast .food-row:nth-of-type(1)');
+        var mealTableRowName = mealTableRow.children('.food-name').text();
+        var mealTableRowCalories = mealTableRow.children('.food-calories').text();
 
-      assert.equal(mealTableRowName, 'Apple');
-      assert.equal(mealTableRowCalories, '100');
+        assert.equal(mealTableRowName, 'Apple');
+        assert.equal(mealTableRowCalories, '100');
+      }, 500);
     });
 
     it('does not add foods when nothing is checked', function(){
