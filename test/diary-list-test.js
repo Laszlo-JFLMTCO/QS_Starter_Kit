@@ -30,8 +30,6 @@ describe('diary test', function() {
     });
 
     it('changes to food list show in diary', function(){
-      localStorage.setItem('breakfast', JSON.stringify(foods));    
-      
       var newFoodName = 'NewFoodName';
 
       $('#food-list .food-name').click();
@@ -44,7 +42,6 @@ describe('diary test', function() {
         var mealTableRowName = mealTableRow.children('.food-name').text();
 
         assert.equal(mealTableRowName, newFoodName);
-        done();
       }, 500)
     });
   });
