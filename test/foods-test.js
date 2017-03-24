@@ -10,6 +10,7 @@ describe('#create-form', function() {
     $('#food-list tbody').html('');
     $('#create-form input').val('');
     $('.validation-error').html('');
+    window.localStorage.clear()
   });
 
   afterEach(function() {
@@ -17,7 +18,7 @@ describe('#create-form', function() {
   });
 
   after(function(){
-    
+
   });
 
   context('validations', function() {
